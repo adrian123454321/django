@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from grados import views as grado_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,6 +28,13 @@ urlpatterns = [
     	r'^grados/{P<grado pk>[0-9]+}/',
     	grados views.detalle_grado,
     	name="detalle_grado")
+
+    url(
+    	r'^grados/crear/',
+    	grados views.crear_grado,
+    	name="crear_grado")
+
+    
 ]
 
 
@@ -64,4 +72,3 @@ urlpatterns = [
 
 
 
-..
